@@ -144,12 +144,30 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(score, param, innings) {
+function scoreboard(func, param, innings) {
   const currScore = []
   for(let i=0;i<innings;i++){
-    currScore.push(score(param));
+    currScore.push(func(param));
   }
-  currScore.push()
+  const homeTotal = function(){
+    let addHome = 0;
+    for(let i=0;i<currScore.length;i++){
+      addHome+=currScore[i]['Home'];
+    }
+    return `Home: ${addHome}`;
+  }
+  const awayTotal = function(){
+    let addAway = 0;
+    for(let i=0;i<currScore.length;i++){
+      addAway+=currScore[i]['Away'];
+    }
+    return `Away: ${addAway}`;
+  }
+  if(homeTotal()===awayTotal()){
+  currScore.push(`This game will require extra innings: ${homeTotal()} - ${awayTotal()}`);}
+  else{
+    currScore.push(`Final Score: ${homeTotal()} - ${awayTotal()}`)
+  }
   return currScore;
 }
 console.log(scoreboard(getInningScore, inning, 9));

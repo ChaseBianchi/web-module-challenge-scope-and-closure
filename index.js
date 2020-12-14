@@ -27,12 +27,12 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   Study the code for counter1 and counter2, then answer the questions below.
   
-  1. What is the difference between counter1 and counter2?
+  1. What is the difference between counter1 and counter2? The scope of counter 2 is global, whereas counter1 is storing all of the variables inside of the function. Counter 1 is also reusable, while counter 2 would need to be redone to be used again later.
   
-  2. Which of the two uses a closure? How can you tell?
+  2. Which of the two uses a closure? How can you tell? Counter 1 uses a closure. It allows you to access the function outside of hte scope of the function.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  Counter 1 would be preferrable pretty much always since it wouldnt interfere with other code, and would be available to use in multiple instances. 
 */
 
 // counter1 code
@@ -62,8 +62,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random()*3);
 }
 
 

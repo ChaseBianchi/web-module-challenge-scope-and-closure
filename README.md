@@ -42,7 +42,7 @@ Find the file `index.js` and complete the tasks.
 
 Edit the `ReadMe` file with your answers.
 
-1. In your own words, define closure (1-2 sentences).
+1. In your own words, define closure (1-2 sentences). Closure is when a function is contained, and has local access to the contents within, but also global access to its parents. 
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,9 +63,9 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+a. Where is closure used in this code? How can you tell? Closure is used in each function. The contents of each function have closure because theyre contained within the function, and their scope is local.
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? Same is the log, but the name is a parameter that can be passed, and the roll is randomly generated each time the function is called.
+c. What is the lexical scope of `newRoll`? it is scoped to the personalDice function.
 
 
 ### Task 3 - Stretch Goals
